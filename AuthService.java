@@ -6,12 +6,10 @@ public class AuthService {
     private User currentUser;
 
     public AuthService() {
-        // Load users from file when app starts
         this.users = FileHandler.loadUsers();
     }
 
     public boolean register(String username, String password) {
-        // Check if user already exists
         for (User u : users) {
             if (u.getUsername().equals(username)) {
                 return false; 
